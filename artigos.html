@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigos & Notícias | Porta Aberta Social</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <div class="header-container">
+           <a href="index.html" class="logo-link">
+              <img src="img-cursos/logo.png" alt="Logo Porta Aberta Social" class="logo-img">
+            </a>
+             <nav>
+             <a href="index.html" class="active-on-index">Página Inicial</a>
+             <a href="cursos.html" class="active-on-cursos">Cursos Gratuitos</a>
+             <a href="artigos.html" class="active-on-artigos">Artigos & Notícias</a>
+             <a href="sobre.html" class="active-on-sobre">Sobre</a>
+             <a href="feedback.html" class="active-on-feedback">Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="catalogo-container">
+        <h2>Artigos, Notícias e Reflexões</h2>
+        
+        <div class="filtros-container">
+            <button class="filtro-btn active" data-filter="todos">Todos os Artigos</button>
+            <button class="filtro-btn" data-filter="genero">Igualdade de Gênero</button>
+            <button class="filtro-btn" data-filter="desigualdade">Desigualdade Social</button>
+            <button class="filtro-btn" data-filter="noticias">Notícias</button>
+        </div>
+        
+        <section id="artigos-grid" class="artigo-grid">
+            </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h3>Porta Aberta Social</h3>
+                <p>&copy; 2025 Todos os direitos reservados.</p>
+            </div>
+
+            <div class="footer-denuncia">
+                <h4>Canais Nacionais de Denúncia (24h)</h4>
+                <div class="denuncia-grid">
+                    <div class="denuncia-item">
+                        <strong>Ligue 180</strong>
+                        <p>Violência contra a Mulher</p>
+                    </div>
+                    <div class="denuncia-item">
+                        <strong>Disque 100</strong>
+                        <p>Violação de Direitos Humanos</p>
+                    </div>
+                    <div class="denuncia-item">
+                        <strong>Ligue 190</strong>
+                        <p>Emergência (Polícia Militar)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="cursos.html">Cursos Gratuitos</a></li>
+                    <li><a href="artigos.html">Artigos & Notícias</a></li>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+    <script>
+        // Dados dos seus artigos - ***ATUALIZE OS LINKS AQUI***
+        const dadosArtigos = [
+       
+            {
+                id: 'desigualdade-dados',
+                titulo: 'Igualdade de gênero no Brasil',
+                resumo: 'A UNESCO está empenhada em promover a igualdade de direitos entre homens e mulheres em todos os sistemas educacionais e em todos os seus níveis, em estruturas formais e não formais, e em todas as áreas de intervenção, desde o planejamento de infraestrutura até a formação de professores',
+                data: '2025-11-01',
+                tags: ['genero', 'educacao'],
+                // SUBSTITUA PELA URL REAL DO ARTIGO EXTERNO
+                linkDetalhe: 'https://www.unesco.org/pt/fieldoffice/brasilia/expertise/gender-equality', 
+                imagem: 'img-cursos/artg-not.png'
+            },
+            {
+                id: 'desigualdade-dados',
+                titulo: 'Igualdade de gênero - UFMG',
+                resumo: 'Saiba por que alcançar a equidade entre os sexos é um dos Objetivos de Desenvolvimento Sustentável da ONU',
+                data: '2025-11-01',
+                tags: ['genero', 'noticias'],
+                // SUBSTITUA PELA URL REAL DO ARTIGO EXTERNO
+                linkDetalhe: 'https://www.ufmg.br/espacodoconhecimento/blog-espaco/igualdade-de-genero/', 
+                imagem: 'img-cursos/artg-not.png'
+            },
+
+            {
+                id: 'Objetivo de Desenvolvimento Sustentável',
+                titulo: 'Igualdade de gênero',
+                resumo: 'Alcançar a igualdade de gênero e empoderar todas as mulheres e meninas',
+                data: '2025-11-01',
+                tags: ['genero', 'educacao'],
+                // SUBSTITUA PELA URL REAL DO ARTIGO EXTERNO
+                linkDetalhe: 'https://brasil.un.org/pt-br/sdgs/5', 
+                imagem: 'img-cursos/artg-not.png'
+            },
+
+
+            {
+                id: 'desigualdade',
+                titulo: 'O estudo global que contesta queda da desigualdade no Brasil celebrada pelo governo Lula',
+                resumo: 'Um novo relatório goblal indica que a concentração de renda subiu no Brasil entre 2014 e 2024, contrariando estudo recente do Ipea',
+                data: '2025-10-15',
+                tags: ['desigualdade', 'noticias'],
+                // SUBSTITUA PELA URL REAL DO ARTIGO EXTERNO
+                linkDetalhe: 'https://g1.globo.com/economia/noticia/2025/12/10/o-estudo-global-que-contesta-queda-da-desigualdade-no-brasil-celebrada-pelo-governo-lula.ghtml', 
+                imagem: 'img-cursos/artg-not.png' 
+            },
+            {
+                id: 'desigualdade',
+                titulo: 'Estado, desigualdade social e pobreza',
+                resumo: 'Um olhar sobre a importância de políticas públicas que assegurem direitos e o bem-estar da sociedade',
+                data: '2025-10-15',
+                tags: ['desigualdade', 'noticias'],
+                // SUBSTITUA PELA URL REAL DO ARTIGO EXTERNO
+                linkDetalhe: 'https://revista.pucminas.br/revista/materia/estado-desigualdade-social-e-pobreza/', 
+                imagem: 'img-cursos/artg-not.png' 
+            },
+             {
+                id: 'desigualdade',
+                titulo: 'Reduzir a desigualdade para gerar oportunidades',
+                resumo: 'Combater a desigualdade exige uma abordagem nova. Primeiro, é preciso repensar as políticas fiscais e a tributação progressiva',
+                data: '2025-10-15',
+                tags: ['desigualdade', 'noticias'],
+                // SUBSTITUA PELA URL REAL DO ARTIGO EXTERNO
+                linkDetalhe: 'https://brasil.un.org/pt-br/84893-artigo-reduzir-desigualdade-para-gerar-oportunidades', 
+                imagem: 'img-cursos/artg-not.png' 
+            },
+            
+            // Adicione mais artigos aqui
+        ];
+
+        // Função para renderizar os artigos
+        function renderizarArtigos(filtroSelecionado = 'todos') {
+            const grid = document.getElementById('artigos-grid');
+            grid.innerHTML = ''; 
+
+            const artigosFiltrados = dadosArtigos.filter(artigo => {
+                if (filtroSelecionado === 'todos') {
+                    return true;
+                }
+                return artigo.tags.includes(filtroSelecionado);
+            });
+
+            artigosFiltrados.forEach(artigo => {
+                const card = document.createElement('a');
+                
+                // *** Ação crucial: Redirecionar para o link externo e abrir em nova aba ***
+                card.href = artigo.linkDetalhe; 
+                card.target = "_blank"; // Abre o link externo em nova aba
+                
+                card.classList.add('artigo-card');
+
+                card.innerHTML = `
+                    <div class="artigo-imagem">
+                        <img src="${artigo.imagem}" alt="Imagem do artigo ${artigo.titulo}">
+                    </div>
+                    <div class="artigo-info">
+                        <h3>${artigo.titulo}</h3>
+                        <p>${artigo.resumo}</p>
+                        <span class="artigo-data">Publicado em: ${artigo.data}</span>
+                        <span class="read-more">LER ARTIGO »</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            
+            if (artigosFiltrados.length === 0) {
+                grid.innerHTML = '<p class="no-results">Nenhum artigo encontrado nesta categoria.</p>';
+            }
+        }
+        
+        // Função para configurar os eventos de clique nos botões de filtro
+        function configurarFiltros() {
+            const botoesFiltro = document.querySelectorAll('.filtro-btn');
+
+            botoesFiltro.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    botoesFiltro.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const filtro = this.getAttribute('data-filter');
+                    renderizarArtigos(filtro);
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarArtigos(); 
+            configurarFiltros();
+        });
+    </script>
+</body>
+</html>
