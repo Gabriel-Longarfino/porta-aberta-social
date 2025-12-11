@@ -702,3 +702,186 @@ footer {
     /* Garante que o botão não tenha largura total, mas sim o tamanho do conteúdo, e seja centralizado */
     display: inline-block; 
 }
+/*
+ * CORREÇÃO CRÍTICA PARA CONTEÚDO ATRÁS DO HEADER FIXO
+ * Adicione este bloco ao seu style.css
+ */
+main {
+    /* Estimativa: o header tem padding vertical (10px cima + 10px baixo) e o menu tem uma altura, 
+       então 80px a 90px deve ser suficiente para empurrar o conteúdo para baixo. */
+    padding-top: 90px; 
+}
+
+/*
+ * CORREÇÃO PARA RESPONSIVIDADE (MOBILE)
+ * Caso o menu ocupe mais espaço vertical no celular (ex: quebra de linha),
+ * este ajuste garantirá que o topo da página não seja cortado.
+ */
+@media (max-width: 768px) {
+    main {
+        /* Aumente o padding no mobile se o logo e o menu ficarem em duas linhas */
+        padding-top: 100px; 
+    }
+}
+/* 1. ESTILOS BASE DO HEADER NO MOBILE */
+.header-container {
+    /* Garante que o logo e o toggle fiquem nas extremidades no mobile */
+    justify-content: space-between; 
+}
+
+
+/* 2. ESTILO E POSICIONAMENTO DO BOTÃO HAMBÚRGUER */
+.menu-toggle {
+    display: none; /* Escondido por padrão (desktop) */
+    background: none;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: #333;
+    padding: 0 10px;
+    line-height: 1;
+}
+
+/* 3. APLICAÇÃO DA LÓGICA DO MENU HAMBÚRGUER (Abaixo de 768px) */
+@media (max-width: 768px) {
+    
+    /* Mostrar o botão hambúrguer */
+    .menu-toggle {
+        display: block; 
+    }
+
+    /* Esconder o menu de links (NAV) */
+    nav {
+        /* Configura a navegação para ocupar o espaço lateral quando aberta */
+        position: absolute;
+        top: 100%; /* Começa abaixo do header fixo */
+        right: 0;
+        width: 70%; /* Largura do menu aberto (ajustável) */
+        background-color: #ffffff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: flex; 
+        flex-direction: column;
+        
+        /* Estado inicial: Escondido, movido para fora da tela */
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 999; /* Fica abaixo do header, mas acima do conteúdo */
+    }
+    
+    /* Estado Aberto: Classe adicionada pelo JavaScript */
+    nav.open {
+        transform: translateX(0); /* Move o menu para dentro da tela */
+    }
+    
+    /* Esconder os links no mobile no estado normal */
+    nav a {
+        padding: 15px 20px;
+        text-align: left;
+        border-right: none; 
+        border-bottom: 1px solid #eee; 
+        width: 100%;
+    }
+
+    /* Correção de Padding para Conteúdo */
+    main {
+        padding-top: 80px; /* Garante que o conteúdo comece abaixo do header */
+    }
+}
+
+/* 4. GARANTIR QUE O MENU ESTEJA VISÍVEL NO DESKTOP */
+@media (min-width: 769px) {
+    nav {
+        /* Garante que o menu esteja visível no desktop e volte ao layout horizontal */
+        display: flex;
+        position: static;
+        transform: none;
+    }
+}
+@media (max-width: 768px) {
+    
+    .header-container {
+        /* Garante que o logo e o toggle fiquem nas extremidades */
+        padding: 0 20px; /* Ajusta o padding lateral para telas menores */
+    }
+
+    /* Mostrar o botão hambúrguer */
+    .menu-toggle {
+        display: block; 
+    }
+    
+    /* ********************************************************* */
+    /* *** CORREÇÃO: Força o NAV a sair do fluxo do header *** */
+    /* ********************************************************* */
+    nav {
+        /* Tira o NAV do alinhamento FLEX, permitindo que Logo e Toggle fiquem nas pontas */
+        position: absolute; 
+        
+        top: 100%; 
+        right: 0;
+        width: 70%; 
+        background-color: #ffffff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        display: flex; 
+        flex-direction: column;
+        
+        transform: translateX(100%); /* Esconde por padrão */
+        transition: transform 0.3s ease-in-out;
+        z-index: 999; 
+    }
+    
+    /* Certifica que os links de desktop não apareçam em linha no mobile */
+    nav a {
+        border-right: none; 
+        border-bottom: 1px solid #eee; 
+    }
+    
+    /* Manter o padding-top da main */
+    main {
+        padding-top: 80px; 
+    }
+}
+
+/* Garante que o menu de links está escondido na visão inicial do mobile */
+@media (max-width: 768px) {
+    nav {
+        /* Escondido no mobile até o JavaScript adicionar a classe 'open' */
+        transform: translateX(100%); 
+    }
+}
+
+/* Garante que o NAV esteja VISÍVEL e em linha no DESKTOP */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+    nav {
+        /* Volta ao alinhamento normal de FLEX (desktop) */
+        position: static; 
+        transform: none; 
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+}
+/* Ocultar o Logo (apenas para telas menores que 768px) */
+@media (max-width: 768px) {
+    
+    .logo-link {
+        display: none !important; /* Oculta completamente o logo e o link que o contém */
+    }
+
+    /* Manter o menu hambúrguer visível na ponta direita */
+    .menu-toggle {
+        display: block; 
+    }
+    
+    .header-container {
+        /* Garante que o conteúdo remanescente (apenas o hambúrguer)
+           não fique centralizado sem o logo. */
+        justify-content: flex-end; /* CRÍTICO: Move o hambúrguer para a ponta direita */
+        padding: 0 20px;
+    }
+    
+    /* Outras regras do menu hambúrguer... */
+    
+}
