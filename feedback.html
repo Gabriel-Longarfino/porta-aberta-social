@@ -8,20 +8,25 @@
 </head>
 <body>
     
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo-link">
-                <img src="caminho/para/seu-logo.png" alt="Logo Porta Aberta Social" class="logo-img">
-            </a>
-            <nav>
-             <a href="index.html" class="active-on-index">Página Inicial</a>
-             <a href="cursos.html" class="active-on-cursos">Cursos Gratuitos</a>
-             <a href="artigos.html" class="active-on-artigos">Artigos & Notícias</a>
-             <a href="sobre.html" class="active-on-sobre">Sobre</a>
-             <a href="feedback.html" class="active-on-feedback">Feedback</a>
-            </nav>
-        </div>
-    </header>
+   <header>
+    <div class="header-container">
+        <a href="index.html" class="logo-link">
+          <img src="img-cursos/logo.png" alt="Logo Porta Aberta Social" class="logo-img">
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menu de navegação">
+            &#9776; 
+        </button>
+
+        <nav id="main-nav">
+          <a href="index.html" class="active">Página Inicial</a>
+          <a href="cursos.html" class="active">Cursos Gratuitos</a>
+          <a href="artigos.html" class="active">Artigos & Notícias</a>
+          <a href="sobre.html" class="active">Sobre</a>
+          <a href="feedback.html" class="active">Feedback</a>
+        </nav>
+    </div>
+</header>
 
     <main class="catalogo-container">
         
@@ -74,13 +79,21 @@
         </div>
     </footer>
     
-</body>
-</html>
     
 </body>
-</html>
+<script>
+    // Este código é essencial para fazer o menu hambúrguer funcionar
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.getElementById('main-nav');
 
-    
-    
-</body>
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+    });
+}
+</script>
+
+
+
 </html>
+    
