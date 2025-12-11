@@ -14,19 +14,24 @@
 <body>
     
     <header>
-        <div class="header-container">
-            <a href="index.html" class="logo-link">
-              <img src="img-cursos/logo.png" alt="Logo Porta Aberta Social" class="logo-img">
-            </a>
-             <nav>
-             <a href="index.html" class="active">Página Inicial</a>
-             <a href="cursos.html" class="active">Cursos Gratuitos</a>
-             <a href="artigos.html" class="active">Artigos & Notícias</a>
-             <a href="sobre.html" class="active">Sobre</a>
-             <a href="feedback.html" class="active">Feedback</a>
-            </nav>
-        </div>
-    </header>
+    <div class="header-container">
+        <a href="index.html" class="logo-link">
+          <img src="img-cursos/logo.png" alt="Logo Porta Aberta Social" class="logo-img">
+        </a>
+
+        <button class="menu-toggle" aria-label="Abrir menu de navegação">
+            &#9776; 
+        </button>
+
+        <nav id="main-nav">
+          <a href="index.html" class="active">Página Inicial</a>
+          <a href="cursos.html" class="active">Cursos Gratuitos</a>
+          <a href="artigos.html" class="active">Artigos & Notícias</a>
+          <a href="sobre.html" class="active">Sobre</a>
+          <a href="feedback.html" class="active">Feedback</a>
+        </nav>
+    </div>
+</header>
 
     <main>
         
@@ -188,6 +193,15 @@
             renderizarDestaqueCursos(4); // Limita a 4 cursos no destaque
             renderizarDestaqueArtigos(3); // Limita a 3 artigos no destaque
         });
+        // Este código é essencial para fazer o menu hambúrguer funcionar
+const menuToggle = document.querySelector('.menu-toggle');
+const mainNav = document.getElementById('main-nav');
+
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+    });
+}
     </script>
     
 </body>
