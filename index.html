@@ -117,11 +117,11 @@
         // *** IMPORTAR DADOS DOS CURSOS ***
         const dadosCursos = [
             // Replicar o mesmo array de objetos de cursos que está no cursos.html
-            { id: 'excel-cv', titulo: 'Curso de Excel – Site Curso em Vídeo', icone: 'img-cursos/curso-livre.png', urlExterna: 'https://www.cursoemvideo.com/curso/excell/', taxonomias: ['tecnologia'] },
-            { id: 'comunicacao-o', titulo: 'Comunicação e Oratória', icone: 'img-cursos/curso-livre.png', urlExterna: 'https://www.ginead.com.br/curso/curso-gratuito-de-comunicacao-e-oratoria?utm_source=google&utm_medium=194837305908&utm_campaign=8622993999&utm_content=777008202175&utm_term=&gad_source=1&gad_campaignid=8622993999&gbraid=0AAAAAD3JbPCr3oZeqlnsYRD1v0IFEsZdz&gclid=Cj0KCQiAosrJBhD0ARIsAHebCNruz-QZkIY0dLld8PPRUf53ojo5H4RJMmMo7lPJVG9Sz75ow4nARKEaAsivEALw_wcB', taxonomias: ['soft-skills'] },
-            { id: 'gestao-emp', titulo: 'Gestão Empresarial - Sebrae', icone: 'img-cursos/curso-livre.png', urlExterna: 'https://www.ginead.com.br/curso/curso-online-gratis-gestao-empresarial?utm_source=google&utm_medium=194837305908&utm_campaign=8622993999&utm_content=777008202175&utm_term=&gad_source=1&gad_campaignid=8622993999&gbraid=0AAAAAD3JbPCr3oZeqlnsYRD1v0IFEsZdz&gclid=Cj0KCQiAosrJBhD0ARIsAHebCNoR4mfxQ-AVzYkctgd4h7wKVeza2IH4nqaO8fVeL0GZN1XED-zY42YaAt5nEALw_wcB', taxonomias: ['gestao'] },
-            { id: 'informatica-b', titulo: 'Informática Básica', icone: 'img-cursos/curso-livre.png', urlExterna: 'https://soeducador.com.br/cursos/info/402/informatica-basica?_gl=1*7zj7qx*_gcl_aw*R0NMLjE3NjQ5NDI5NTEuQ2owS0NRaUFvc3JKQmhEMEFSSXNBSGViQ05wa0NVV0k4UVZLYVF1eFBaSGhQcGhkTl90NGNBR2p0RE1xWTkxSDgwRnYyOWtHWEx1eXQxNGFBam1CRUFMd193Y0I.*_gcl_au*MzcyMjIwMTcxLjE3NjQ5NDI5NTA.', taxonomias: ['tecnologia'] },
-            { id: 'financas-p', titulo: 'Mapeie sua vida financeira', icone:'img-cursos/curso-livre.png', urlExterna: 'https://plataforma.meubolsoemdia.com.br/?utm_source=google-search&utm_medium=cpc&utm_campaign=jussi_febraban_consideracao_meu-bolso-em-dia_plataforma_google-search_trafego_cpc_ano-2025&utm_term=kw-plataforma&gad_source=1&gad_campaignid=22556441972&gbraid=0AAAAA9ghTXah4Hq0lubd5U3skjlH1XfPG&gclid=Cj0KCQiAosrJBhD0ARIsAHebCNq0R0Eue81gvLUe5n1cLQVkyXy0IdEVk1i3CNdU7nrBfDw9r0Cr1pIaAnxQEALw_wcB', taxonomias: ['financas'] },
+            { id: 'excel-cv', titulo: 'Curso de Excel – Site Curso em Vídeo', icone: 'img-cursos/informatica.jpg', urlExterna: 'https://www.cursoemvideo.com/curso/excell/', taxonomias: ['tecnologia'] },
+            { id: 'comunicacao-o', titulo: 'Comunicação e Oratória', icone: 'img-cursos/empree.jpg', urlExterna: 'https://www.ginead.com.br/curso/curso-gratuito-de-comunicacao-e-oratoria?utm_source=google&utm_medium=194837305908&utm_campaign=8622993999&utm_content=777008202175&utm_term=&gad_source=1&gad_campaignid=8622993999&gbraid=0AAAAAD3JbPCr3oZeqlnsYRD1v0IFEsZdz&gclid=Cj0KCQiAosrJBhD0ARIsAHebCNruz-QZkIY0dLld8PPRUf53ojo5H4RJMmMo7lPJVG9Sz75ow4nARKEaAsivEALw_wcB', taxonomias: ['soft-skills'] },
+            { id: 'gestao-emp', titulo: 'Gestão Empresarial - Sebrae', icone: 'img-cursos/finanças.jpg', urlExterna: 'https://www.ginead.com.br/curso/curso-online-gratis-gestao-empresarial?utm_source=google&utm_medium=194837305908&utm_campaign=8622993999&utm_content=777008202175&utm_term=&gad_source=1&gad_campaignid=8622993999&gbraid=0AAAAAD3JbPCr3oZeqlnsYRD1v0IFEsZdz&gclid=Cj0KCQiAosrJBhD0ARIsAHebCNoR4mfxQ-AVzYkctgd4h7wKVeza2IH4nqaO8fVeL0GZN1XED-zY42YaAt5nEALw_wcB', taxonomias: ['gestao'] },
+            { id: 'informatica-b', titulo: 'Informática Básica', icone: 'img-cursos/informatica.jpg', urlExterna: 'https://soeducador.com.br/cursos/info/402/informatica-basica?_gl=1*7zj7qx*_gcl_aw*R0NMLjE3NjQ5NDI5NTEuQ2owS0NRaUFvc3JKQmhEMEFSSXNBSGViQ05wa0NVV0k4UVZLYVF1eFBaSGhQcGhkTl90NGNBR2p0RE1xWTkxSDgwRnYyOWtHWEx1eXQxNGFBam1CRUFMd193Y0I.*_gcl_au*MzcyMjIwMTcxLjE3NjQ5NDI5NTA.', taxonomias: ['tecnologia'] },
+            { id: 'financas-p', titulo: 'Mapeie sua vida financeira', icone:'img-cursos/finanças.jpg', urlExterna: 'https://plataforma.meubolsoemdia.com.br/?utm_source=google-search&utm_medium=cpc&utm_campaign=jussi_febraban_consideracao_meu-bolso-em-dia_plataforma_google-search_trafego_cpc_ano-2025&utm_term=kw-plataforma&gad_source=1&gad_campaignid=22556441972&gbraid=0AAAAA9ghTXah4Hq0lubd5U3skjlH1XfPG&gclid=Cj0KCQiAosrJBhD0ARIsAHebCNq0R0Eue81gvLUe5n1cLQVkyXy0IdEVk1i3CNdU7nrBfDw9r0Cr1pIaAnxQEALw_wcB', taxonomias: ['financas'] },
             // ... adicione mais cursos aqui
         ];
         
@@ -207,5 +207,6 @@ if (menuToggle && mainNav) {
 </body>
 </html>
     
+
 
 
